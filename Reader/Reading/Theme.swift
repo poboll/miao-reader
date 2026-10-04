@@ -1,19 +1,20 @@
 import SwiftUI
 
-/// 余白风格设计令牌：暖纸 + 绯红 + 衬线（深浅色自适应）
+/// 设计令牌 = poboll/Shiroi（Yohaku）主题 variables.css 原值：
+/// 一个点缀（灰玫瑰 #e095a4）+ 三级中性 + 其余留白
 enum YuBai {
-    static let paper    = Color(light: UIColor(red: 0.97, green: 0.95, blue: 0.92, alpha: 1),
-                                dark:  UIColor(red: 0.09, green: 0.08, blue: 0.07, alpha: 1))
-    static let card     = Color(light: UIColor(red: 1.00, green: 0.99, blue: 0.97, alpha: 1),
-                                dark:  UIColor(red: 0.14, green: 0.12, blue: 0.11, alpha: 1))
-    static let ink      = Color(light: UIColor(red: 0.17, green: 0.15, blue: 0.13, alpha: 1),
-                                dark:  UIColor(red: 0.91, green: 0.89, blue: 0.85, alpha: 1))
-    static let dim      = Color(light: UIColor(red: 0.54, green: 0.51, blue: 0.47, alpha: 1),
-                                dark:  UIColor(red: 0.60, green: 0.57, blue: 0.51, alpha: 1))
-    static let accent   = Color(light: UIColor(red: 0.65, green: 0.25, blue: 0.18, alpha: 1),
-                                dark:  UIColor(red: 0.84, green: 0.49, blue: 0.38, alpha: 1))
-    static let hairline = Color(light: UIColor(red: 0.88, green: 0.85, blue: 0.80, alpha: 1),
-                                dark:  UIColor(red: 0.23, green: 0.21, blue: 0.19, alpha: 1))
+    static let paper    = Color(light: UIColor(red: 1.00, green: 1.00, blue: 0.984, alpha: 1),   // #fefefb
+                                dark:  UIColor(red: 0.11, green: 0.11, blue: 0.118, alpha: 1))    // #1c1c1e
+    static let card     = Color(light: .white,
+                                dark:  UIColor(red: 0.141, green: 0.141, blue: 0.157, alpha: 1))  // #242424
+    static let ink      = Color(light: UIColor(red: 0.078, green: 0.078, blue: 0.078, alpha: 1),  // #141414
+                                dark:  UIColor(red: 0.973, green: 0.973, blue: 0.973, alpha: 1))  // #f8f8f8
+    static let dim      = Color(light: UIColor(red: 0.47, green: 0.47, blue: 0.47, alpha: 1),     // #787878
+                                dark:  UIColor(red: 0.596, green: 0.596, blue: 0.596, alpha: 1))
+    static let accent   = Color(light: UIColor(red: 0.878, green: 0.584, blue: 0.643, alpha: 1),  // #e095a4
+                                dark:  UIColor(red: 0.878, green: 0.584, blue: 0.643, alpha: 1))
+    static let hairline = Color(light: UIColor(red: 0.094, green: 0.094, blue: 0.106, alpha: 0.08),
+                                dark:  UIColor(red: 1, green: 1, blue: 1, alpha: 0.10))
 
     static let serifTitle = Font.system(.title2, design: .serif).weight(.bold)
     static let serifBody = Font.system(size: 16.5, design: .serif)
@@ -30,9 +31,7 @@ extension Color {
     }
 }
 
-/// 通用页面背景（暖纸色）
+/// 通用页面背景
 struct PaperBackground: View {
-    var body: some View {
-        YuBai.paper.ignoresSafeArea()
-    }
+    var body: some View { YuBai.paper.ignoresSafeArea() }
 }
