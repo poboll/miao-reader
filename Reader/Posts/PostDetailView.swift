@@ -1,45 +1,48 @@
 import SwiftUI
 
 struct PostDetailView: View {
-    let post: Post
+    let item: PostItem
+    @State private var detail: PostDetail?
     @State private var plainText = ""
-    @State private var loaded = false
-    @State private var detail: Post?
-    private var body_markdown: String { (detail?.text ?? post.text) ?? "" }
+    @State private var failed = false
     @StateObject private var speech = SpeechController.shared
 
     var body: some View {
         ScrollView {
             VStack(alignment: .leading, spacing: 12) {
-                Text(post.title).font(.title2).bold().padding(.horizontal)
+                Text(item.title).font(.title2).bold().padding(.horizontal)
                 HStack {
-                    if let c = post.category { Text(c.name).font(.caption).foregroundStyle(.tint) }
+                    if let c = item.category { Text(c.name).font(.caption).foregroundStyle(.tint) }
                     Spacer()
-                    Text(DateFormatter.display(post.created_at)).font(.caption).foregroundStyle(.tertiary)
+                    Text(DateFormatter.display(item.created_at)).font(.caption).foregroundStyle(.tertiary)
                 }.padding(.horizontal)
-                if loaded {
-                    MarkdownPage(markdown: body_markdown, plainText: $plainText)
-                        .frame(minHeight: 1200)
+                if let d = detail {
+                    ArticleMarkdown(markdown: d.text ?? "")
+                        .padding(.horizontal, 14)
+                } else if failed {
+                    ContentUnavailableView("加载失败", systemImage: "wifi.exclamationmark").padding(60)
                 } else {
-                    ProgressView().frame(maxWidth: .infinity).padding(60)
+                    ProgressView().frame(maxWidth: .infinity).padding(80)
                 }
             }
+            .padding(.bottom, 60)
         }
         .navigationBarTitleDisplayMode(.inline)
         .toolbar {
             ToolbarItem(placement: .topBarTrailing) {
                 Button {
-                    if plainText.isEmpty { loaded = true }
-                    speech.toggle(plainText)
+                    if let d = detail { speech.toggle(d.text ?? "") }
                 } label: {
                     Image(systemName: speech.speaking ? "stop.circle" : "speaker.wave.2")
                 }
+                .disabled(detail == nil)
             }
         }
         .task {
-            // 详情接口拿全文（列表的 text 可能截断）
-            if let d: Post = try? await Api.get("posts/\(post.id)") { detail = d }
-            loaded = true
+            do {
+                let (d, status): (PostDetail, Int) = try await Api.getWithStatus("posts/\(item.id)")
+                if status == 200 { detail = d } else { failed = true }
+            } catch { failed = true }
         }
     }
 }

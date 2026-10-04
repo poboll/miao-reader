@@ -2,7 +2,6 @@ import SwiftUI
 
 struct NoteDetailView: View {
     let note: Note
-    @State private var plainText = ""
     @StateObject private var speech = SpeechController.shared
 
     var body: some View {
@@ -15,14 +14,14 @@ struct NoteDetailView: View {
                     Spacer()
                     Text(DateFormatter.display(note.public_at ?? note.created_at)).font(.caption).foregroundStyle(.tertiary)
                 }.padding(.horizontal)
-                MarkdownPage(markdown: note.text ?? "", plainText: $plainText)
-                    .frame(minHeight: 900)
+                ArticleMarkdown(markdown: note.text ?? "")
+                    .padding(.horizontal, 14)
             }
         }
         .navigationBarTitleDisplayMode(.inline)
         .toolbar {
             ToolbarItem(placement: .topBarTrailing) {
-                Button { speech.toggle(plainText) } label: {
+                Button { speech.toggle(note.text ?? "") } label: {
                     Image(systemName: speech.speaking ? "stop.circle" : "speaker.wave.2")
                 }
             }

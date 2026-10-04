@@ -11,26 +11,23 @@
 		0791CD729141F86571CFA189 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B26653FCF8CE8B21B2A7C35 /* SettingsView.swift */; };
 		0BE87598039D8EE811EBB718 /* NoteDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23EB0415D6893CAE0A8C8F11 /* NoteDetailView.swift */; };
 		0EE2353B2F8EF4E843CEF469 /* MiaoReaderApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A9ED4250962A8542F603E0C /* MiaoReaderApp.swift */; };
-		2CC3A26050EA91D95DA44591 /* MarkdownPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21A8E4DD582D210F8039B6A8 /* MarkdownPage.swift */; };
 		3572F2A17D44837FF2E82F69 /* NoteListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59E00C955A55CA0C041F4C05 /* NoteListView.swift */; };
-		90E435C47DE5EA4EF0FFBDF9 /* SpeechController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528E36D41A07D7FD38462EA1 /* SpeechController.swift */; };
+		527E76D48318823192B68B26 /* MarkdownUI in Frameworks */ = {isa = PBXBuildFile; productRef = F7441C5C97FB60FBFBFFE5CF /* MarkdownUI */; };
 		9A4D017E83A8496941570CF9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B1C1928AC21FC413F83C6422 /* Assets.xcassets */; };
 		AC391DB51DF173DD0BB488F5 /* RootTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC53D9F763755B387E4EEC2C /* RootTabView.swift */; };
 		B63E1B7E8B8B643587A7B1A9 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B27400D7EF60E39E77D72DA /* Models.swift */; };
-		BF342ABA254F0483B680F8F8 /* marked.min.js in Resources */ = {isa = PBXBuildFile; fileRef = 95128DD50521CFFA0342E7D6 /* marked.min.js */; };
+		C2CB69A471C205AD6E09EA82 /* MarkdownView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21E1E0719C9DCE5F61DCAE73 /* MarkdownView.swift */; };
 		F2C297559F1F129E593DA8D1 /* PostDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC3E7ED509CFB07077E0868 /* PostDetailView.swift */; };
 		FEA193D5F97F9C1C8977047E /* PostListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC6B09440BE31FB3683FA8C /* PostListView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		1B27400D7EF60E39E77D72DA /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
-		21A8E4DD582D210F8039B6A8 /* MarkdownPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkdownPage.swift; sourceTree = "<group>"; };
+		21E1E0719C9DCE5F61DCAE73 /* MarkdownView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkdownView.swift; sourceTree = "<group>"; };
 		23EB0415D6893CAE0A8C8F11 /* NoteDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteDetailView.swift; sourceTree = "<group>"; };
 		4B26653FCF8CE8B21B2A7C35 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
-		528E36D41A07D7FD38462EA1 /* SpeechController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechController.swift; sourceTree = "<group>"; };
 		59E00C955A55CA0C041F4C05 /* NoteListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteListView.swift; sourceTree = "<group>"; };
 		6A9ED4250962A8542F603E0C /* MiaoReaderApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiaoReaderApp.swift; sourceTree = "<group>"; };
-		95128DD50521CFFA0342E7D6 /* marked.min.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = marked.min.js; sourceTree = "<group>"; };
 		9DC6B09440BE31FB3683FA8C /* PostListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostListView.swift; sourceTree = "<group>"; };
 		A8FD0A8A42BC2FCCED9EEF11 /* ApiClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiClient.swift; sourceTree = "<group>"; };
 		B1C1928AC21FC413F83C6422 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -38,6 +35,17 @@
 		BC53D9F763755B387E4EEC2C /* RootTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootTabView.swift; sourceTree = "<group>"; };
 		D5185009FEF5FA5F6A58E221 /* MiaoReader.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = MiaoReader.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		6F104FB7035723182BA921A6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				527E76D48318823192B68B26 /* MarkdownUI in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
 		16429AA6248454F9DFECBC44 /* Products */ = {
@@ -65,14 +73,6 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
-		9C45A6488E79169409F756AB /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				95128DD50521CFFA0342E7D6 /* marked.min.js */,
-			);
-			path = Resources;
-			sourceTree = "<group>";
-		};
 		B631C872EE0BC98279FA1E8D /* API */ = {
 			isa = PBXGroup;
 			children = (
@@ -84,8 +84,7 @@
 		C2B2CAEFD269E1BEE5B2DB6E /* Reading */ = {
 			isa = PBXGroup;
 			children = (
-				21A8E4DD582D210F8039B6A8 /* MarkdownPage.swift */,
-				528E36D41A07D7FD38462EA1 /* SpeechController.swift */,
+				21E1E0719C9DCE5F61DCAE73 /* MarkdownView.swift */,
 			);
 			path = Reading;
 			sourceTree = "<group>";
@@ -110,7 +109,6 @@
 				C2DCB7D48598107BFBA4B51F /* Notes */,
 				2621AD090D091FD433412F75 /* Posts */,
 				C2B2CAEFD269E1BEE5B2DB6E /* Reading */,
-				9C45A6488E79169409F756AB /* Resources */,
 				E9D226A000CD31656F74C3DA /* Settings */,
 			);
 			path = Reader;
@@ -141,6 +139,7 @@
 			buildPhases = (
 				95DD0152EF039AD0CCE201D1 /* Sources */,
 				8EFD707BDE0366BBA5F52246 /* Resources */,
+				6F104FB7035723182BA921A6 /* Frameworks */,
 			);
 			buildRules = (
 			);
@@ -148,6 +147,7 @@
 			);
 			name = MiaoReader;
 			packageProductDependencies = (
+				F7441C5C97FB60FBFBFFE5CF /* MarkdownUI */,
 			);
 			productName = MiaoReader;
 			productReference = D5185009FEF5FA5F6A58E221 /* MiaoReader.app */;
@@ -176,6 +176,9 @@
 			);
 			mainGroup = F664C09788BDE108A7271311;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				F5460E69E55D3934898D2783 /* XCRemoteSwiftPackageReference "MarkdownUI" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 16429AA6248454F9DFECBC44 /* Products */;
 			projectDirPath = "";
@@ -192,7 +195,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				9A4D017E83A8496941570CF9 /* Assets.xcassets in Resources */,
-				BF342ABA254F0483B680F8F8 /* marked.min.js in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -204,7 +206,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				04CABB414B39804C150F634C /* ApiClient.swift in Sources */,
-				2CC3A26050EA91D95DA44591 /* MarkdownPage.swift in Sources */,
+				C2CB69A471C205AD6E09EA82 /* MarkdownView.swift in Sources */,
 				0EE2353B2F8EF4E843CEF469 /* MiaoReaderApp.swift in Sources */,
 				B63E1B7E8B8B643587A7B1A9 /* Models.swift in Sources */,
 				0BE87598039D8EE811EBB718 /* NoteDetailView.swift in Sources */,
@@ -213,7 +215,6 @@
 				FEA193D5F97F9C1C8977047E /* PostListView.swift in Sources */,
 				AC391DB51DF173DD0BB488F5 /* RootTabView.swift in Sources */,
 				0791CD729141F86571CFA189 /* SettingsView.swift in Sources */,
-				90E435C47DE5EA4EF0FFBDF9 /* SpeechController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -347,7 +348,7 @@
 				CODE_SIGNING_REQUIRED = YES;
 				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_CFBundleDisplayName = "喵内阅读室";
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -356,7 +357,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.1.0;
+				MARKETING_VERSION = 0.2.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.caiths.reader;
 				SDKROOT = iphoneos;
 				SWIFT_VERSION = 5.9;
@@ -372,7 +373,7 @@
 				CODE_SIGNING_REQUIRED = YES;
 				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_CFBundleDisplayName = "喵内阅读室";
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -381,7 +382,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.1.0;
+				MARKETING_VERSION = 0.2.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.caiths.reader;
 				SDKROOT = iphoneos;
 				SWIFT_VERSION = 5.9;
@@ -411,6 +412,25 @@
 			defaultConfigurationName = Debug;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		F5460E69E55D3934898D2783 /* XCRemoteSwiftPackageReference "MarkdownUI" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/gonzalezreal/MarkdownUI";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.4.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		F7441C5C97FB60FBFBFFE5CF /* MarkdownUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F5460E69E55D3934898D2783 /* XCRemoteSwiftPackageReference "MarkdownUI" */;
+			productName = MarkdownUI;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = A9AA50C238AE497C41B4CE0C /* Project object */;
 }

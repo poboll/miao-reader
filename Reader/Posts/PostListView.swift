@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct PostListView: View {
-    @State private var posts: [Post] = []
+    @State private var posts: [PostItem] = []
     @State private var loading = true
     @State private var failed = false
 
@@ -20,7 +20,7 @@ struct PostListView: View {
                 }
             }
             .navigationTitle("文章")
-            .navigationDestination(for: Post.self) { PostDetailView(post: $0) }
+            .navigationDestination(for: PostItem.self) { PostDetailView(item: $0) }
             .task { await load() }
             .refreshable { await load() }
         }
@@ -34,7 +34,7 @@ struct PostListView: View {
 }
 
 struct PostRow: View {
-    let post: Post
+    let post: PostItem
     var body: some View {
         VStack(alignment: .leading, spacing: 6) {
             Text(post.title).font(.headline).lineLimit(2)

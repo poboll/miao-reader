@@ -33,3 +33,14 @@ extension DateFormatter {
         return display.string(from: d)
     }
 }
+
+extension Api {
+    static func getWithStatus<T: Decodable>(_ path: String, query: [String: String] = [:]) async throws -> (T, Int) {
+        var comps = URLComponents(url: base.appending(path: path), resolvingAgainstBaseURL: false)!
+        if !query.isEmpty { comps.queryItems = query.map { URLQueryItem(name: $0.key, value: $0.value) } }
+        var req = URLRequest(url: comps.url!)
+        req.timeoutInterval = 20
+        let (data, resp) = try await URLSession.shared.data(for: req)
+        return (try JSONDecoder().decode(Envelope<T>.self, from: data).data, (resp as? HTTPURLResponse)?.statusCode ?? 0)
+    }
+}
