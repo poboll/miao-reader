@@ -7,23 +7,30 @@ struct PostListView: View {
 
     var body: some View {
         NavigationStack {
-            Group {
-                if loading { ProgressView("正在向服务器飞奔…") }
-                else if failed { ContentUnavailableView("加载失败", systemImage: "wifi.exclamationmark") }
-                else {
-                    List {
-                        ForEach(posts) { post in
-                            NavigationLink(value: post) { PostRow(post: post) }
-                        }
+            ScrollView {
+                LazyVStack(alignment: .leading, spacing: 22) {
+                    Text("文章")
+                        .font(YuBai.serif(28, .bold))
+                        .padding(.horizontal, 20).padding(.top, 8)
+                    ForEach(posts) { post in
+                        NavigationLink(value: post) { PostCard(post: post) }
+                            .buttonStyle(.plain)
+                            .padding(.horizontal, 16)
                     }
-                    .listStyle(.plain)
                 }
+                .padding(.bottom, 40)
             }
-            .navigationTitle("文章")
+            .scrollContentBackground(.hidden)
+            .background(PaperBackground())
             .navigationDestination(for: PostItem.self) { PostDetailView(item: $0) }
             .task { await load() }
             .refreshable { await load() }
+            .overlay {
+                if loading && posts.isEmpty { ProgressView("正在向服务器飞奔…").frame(maxWidth: .infinity, maxHeight: .infinity).background(PaperBackground()) }
+                else if failed && posts.isEmpty { ContentUnavailableView("加载失败", systemImage: "wifi.exclamationmark").background(PaperBackground()) }
+            }
         }
+        .tint(YuBai.accent)
     }
     private func load() async {
         failed = false; loading = posts.isEmpty
@@ -33,20 +40,45 @@ struct PostListView: View {
     }
 }
 
-struct PostRow: View {
+struct PostCard: View {
     let post: PostItem
     var body: some View {
-        VStack(alignment: .leading, spacing: 6) {
-            Text(post.title).font(.headline).lineLimit(2)
+        VStack(alignment: .leading, spacing: 10) {
+            // 内容
+            if let cover = post.images?.first, let url = URL(string: cover) {
+                AsyncImage(url: url) { img in
+                    img.resizable().scaledToFill()
+                } placeholder: {
+                    Rectangle().fill(YuBai.hairline).aspectRatio(16/9, contentMode: .fit)
+                }
+                .frame(maxWidth: .infinity)
+                .frame(height: 170)
+                .clipShape(RoundedRectangle(cornerRadius: 12))
+            }
+            Text(post.title)
+                .font(YuBai.serif(19, .semibold))
+                .foregroundStyle(YuBai.ink)
+                .lineLimit(2)
             if let s = post.summary, !s.isEmpty {
-                Text(s).font(.subheadline).foregroundStyle(.secondary).lineLimit(2)
+                Text(Plain.excerpt(from: s, limit: 64))
+                    .font(.subheadline)
+                    .foregroundStyle(YuBai.dim)
+                    .lineLimit(2)
             }
             HStack {
-                if let c = post.category { Text(c.name).font(.caption).foregroundStyle(.tint) }
+                Text(post.category?.name ?? "未分类")
+                    .font(.caption2).fontWeight(.medium)
+                    .foregroundStyle(YuBai.accent)
+                    .padding(.horizontal, 8).padding(.vertical, 3)
+                    .background(Capsule().fill(YuBai.accent.opacity(0.1)))
                 Spacer()
-                Text(DateFormatter.display(post.created_at)).font(.caption2).foregroundStyle(.tertiary)
+                Text(DateFormatter.display(post.created_at))
+                    .font(.caption2).foregroundStyle(YuBai.dim)
             }
         }
-        .padding(.vertical, 4)
+        .frame(maxWidth: .infinity, alignment: .leading)
+        .padding(14)
+        .background(RoundedRectangle(cornerRadius: 16).fill(YuBai.card))
+        .overlay(RoundedRectangle(cornerRadius: 16).stroke(YuBai.hairline.opacity(0.6), lineWidth: 1))
     }
 }
