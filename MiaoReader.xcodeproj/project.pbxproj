@@ -1,0 +1,416 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		04CABB414B39804C150F634C /* ApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8FD0A8A42BC2FCCED9EEF11 /* ApiClient.swift */; };
+		0791CD729141F86571CFA189 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B26653FCF8CE8B21B2A7C35 /* SettingsView.swift */; };
+		0BE87598039D8EE811EBB718 /* NoteDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23EB0415D6893CAE0A8C8F11 /* NoteDetailView.swift */; };
+		0EE2353B2F8EF4E843CEF469 /* MiaoReaderApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A9ED4250962A8542F603E0C /* MiaoReaderApp.swift */; };
+		2CC3A26050EA91D95DA44591 /* MarkdownPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21A8E4DD582D210F8039B6A8 /* MarkdownPage.swift */; };
+		3572F2A17D44837FF2E82F69 /* NoteListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59E00C955A55CA0C041F4C05 /* NoteListView.swift */; };
+		90E435C47DE5EA4EF0FFBDF9 /* SpeechController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528E36D41A07D7FD38462EA1 /* SpeechController.swift */; };
+		9A4D017E83A8496941570CF9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B1C1928AC21FC413F83C6422 /* Assets.xcassets */; };
+		AC391DB51DF173DD0BB488F5 /* RootTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC53D9F763755B387E4EEC2C /* RootTabView.swift */; };
+		B63E1B7E8B8B643587A7B1A9 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B27400D7EF60E39E77D72DA /* Models.swift */; };
+		BF342ABA254F0483B680F8F8 /* marked.min.js in Resources */ = {isa = PBXBuildFile; fileRef = 95128DD50521CFFA0342E7D6 /* marked.min.js */; };
+		F2C297559F1F129E593DA8D1 /* PostDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC3E7ED509CFB07077E0868 /* PostDetailView.swift */; };
+		FEA193D5F97F9C1C8977047E /* PostListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC6B09440BE31FB3683FA8C /* PostListView.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		1B27400D7EF60E39E77D72DA /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
+		21A8E4DD582D210F8039B6A8 /* MarkdownPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkdownPage.swift; sourceTree = "<group>"; };
+		23EB0415D6893CAE0A8C8F11 /* NoteDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteDetailView.swift; sourceTree = "<group>"; };
+		4B26653FCF8CE8B21B2A7C35 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		528E36D41A07D7FD38462EA1 /* SpeechController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechController.swift; sourceTree = "<group>"; };
+		59E00C955A55CA0C041F4C05 /* NoteListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteListView.swift; sourceTree = "<group>"; };
+		6A9ED4250962A8542F603E0C /* MiaoReaderApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiaoReaderApp.swift; sourceTree = "<group>"; };
+		95128DD50521CFFA0342E7D6 /* marked.min.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = marked.min.js; sourceTree = "<group>"; };
+		9DC6B09440BE31FB3683FA8C /* PostListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostListView.swift; sourceTree = "<group>"; };
+		A8FD0A8A42BC2FCCED9EEF11 /* ApiClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiClient.swift; sourceTree = "<group>"; };
+		B1C1928AC21FC413F83C6422 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		BAC3E7ED509CFB07077E0868 /* PostDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDetailView.swift; sourceTree = "<group>"; };
+		BC53D9F763755B387E4EEC2C /* RootTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootTabView.swift; sourceTree = "<group>"; };
+		D5185009FEF5FA5F6A58E221 /* MiaoReader.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = MiaoReader.app; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXGroup section */
+		16429AA6248454F9DFECBC44 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D5185009FEF5FA5F6A58E221 /* MiaoReader.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		2621AD090D091FD433412F75 /* Posts */ = {
+			isa = PBXGroup;
+			children = (
+				BAC3E7ED509CFB07077E0868 /* PostDetailView.swift */,
+				9DC6B09440BE31FB3683FA8C /* PostListView.swift */,
+			);
+			path = Posts;
+			sourceTree = "<group>";
+		};
+		49E210DF4A2F4147AC7A15EC /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				1B27400D7EF60E39E77D72DA /* Models.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		9C45A6488E79169409F756AB /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				95128DD50521CFFA0342E7D6 /* marked.min.js */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		B631C872EE0BC98279FA1E8D /* API */ = {
+			isa = PBXGroup;
+			children = (
+				A8FD0A8A42BC2FCCED9EEF11 /* ApiClient.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		C2B2CAEFD269E1BEE5B2DB6E /* Reading */ = {
+			isa = PBXGroup;
+			children = (
+				21A8E4DD582D210F8039B6A8 /* MarkdownPage.swift */,
+				528E36D41A07D7FD38462EA1 /* SpeechController.swift */,
+			);
+			path = Reading;
+			sourceTree = "<group>";
+		};
+		C2DCB7D48598107BFBA4B51F /* Notes */ = {
+			isa = PBXGroup;
+			children = (
+				23EB0415D6893CAE0A8C8F11 /* NoteDetailView.swift */,
+				59E00C955A55CA0C041F4C05 /* NoteListView.swift */,
+			);
+			path = Notes;
+			sourceTree = "<group>";
+		};
+		DD4E3FAA5CB6BFF9CD312D1B /* Reader */ = {
+			isa = PBXGroup;
+			children = (
+				B1C1928AC21FC413F83C6422 /* Assets.xcassets */,
+				6A9ED4250962A8542F603E0C /* MiaoReaderApp.swift */,
+				BC53D9F763755B387E4EEC2C /* RootTabView.swift */,
+				B631C872EE0BC98279FA1E8D /* API */,
+				49E210DF4A2F4147AC7A15EC /* Models */,
+				C2DCB7D48598107BFBA4B51F /* Notes */,
+				2621AD090D091FD433412F75 /* Posts */,
+				C2B2CAEFD269E1BEE5B2DB6E /* Reading */,
+				9C45A6488E79169409F756AB /* Resources */,
+				E9D226A000CD31656F74C3DA /* Settings */,
+			);
+			path = Reader;
+			sourceTree = "<group>";
+		};
+		E9D226A000CD31656F74C3DA /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				4B26653FCF8CE8B21B2A7C35 /* SettingsView.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		F664C09788BDE108A7271311 = {
+			isa = PBXGroup;
+			children = (
+				DD4E3FAA5CB6BFF9CD312D1B /* Reader */,
+				16429AA6248454F9DFECBC44 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		7EFECAD6F737B3DECBC1AC06 /* MiaoReader */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 619A951D39FF844761713AA2 /* Build configuration list for PBXNativeTarget "MiaoReader" */;
+			buildPhases = (
+				95DD0152EF039AD0CCE201D1 /* Sources */,
+				8EFD707BDE0366BBA5F52246 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MiaoReader;
+			packageProductDependencies = (
+			);
+			productName = MiaoReader;
+			productReference = D5185009FEF5FA5F6A58E221 /* MiaoReader.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A9AA50C238AE497C41B4CE0C /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1430;
+				TargetAttributes = {
+					7EFECAD6F737B3DECBC1AC06 = {
+						ProvisioningStyle = Manual;
+					};
+				};
+			};
+			buildConfigurationList = 6CF82C90677BD257F4B66574 /* Build configuration list for PBXProject "MiaoReader" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = F664C09788BDE108A7271311;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 16429AA6248454F9DFECBC44 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				7EFECAD6F737B3DECBC1AC06 /* MiaoReader */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		8EFD707BDE0366BBA5F52246 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9A4D017E83A8496941570CF9 /* Assets.xcassets in Resources */,
+				BF342ABA254F0483B680F8F8 /* marked.min.js in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		95DD0152EF039AD0CCE201D1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				04CABB414B39804C150F634C /* ApiClient.swift in Sources */,
+				2CC3A26050EA91D95DA44591 /* MarkdownPage.swift in Sources */,
+				0EE2353B2F8EF4E843CEF469 /* MiaoReaderApp.swift in Sources */,
+				B63E1B7E8B8B643587A7B1A9 /* Models.swift in Sources */,
+				0BE87598039D8EE811EBB718 /* NoteDetailView.swift in Sources */,
+				3572F2A17D44837FF2E82F69 /* NoteListView.swift in Sources */,
+				F2C297559F1F129E593DA8D1 /* PostDetailView.swift in Sources */,
+				FEA193D5F97F9C1C8977047E /* PostListView.swift in Sources */,
+				AC391DB51DF173DD0BB488F5 /* RootTabView.swift in Sources */,
+				0791CD729141F86571CFA189 /* SettingsView.swift in Sources */,
+				90E435C47DE5EA4EF0FFBDF9 /* SpeechController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		12D4118ED8DEF2284B6D8865 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		243DA5D99F02D36BF8F1F91A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DEBUG=1",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		47D502B775FED473311BBECD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGNING_ALLOWED = YES;
+				CODE_SIGNING_REQUIRED = YES;
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "喵内阅读室";
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 0.1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.caiths.reader;
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.9;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+		F88FB644BE78B4D7C42AEE3E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGNING_ALLOWED = YES;
+				CODE_SIGNING_REQUIRED = YES;
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "喵内阅读室";
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 0.1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.caiths.reader;
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.9;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		619A951D39FF844761713AA2 /* Build configuration list for PBXNativeTarget "MiaoReader" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F88FB644BE78B4D7C42AEE3E /* Debug */,
+				47D502B775FED473311BBECD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		6CF82C90677BD257F4B66574 /* Build configuration list for PBXProject "MiaoReader" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				243DA5D99F02D36BF8F1F91A /* Debug */,
+				12D4118ED8DEF2284B6D8865 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = A9AA50C238AE497C41B4CE0C /* Project object */;
+}
