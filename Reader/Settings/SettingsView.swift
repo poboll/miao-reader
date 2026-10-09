@@ -1,10 +1,10 @@
 import SwiftUI
 
 struct SettingsView: View {
+    @EnvironmentObject private var theme: ThemeStore
+
     var body: some View {
         NavigationStack {
-            ZStack { PaperBackground() }
-            .navigationTitle("设置")
             ScrollView {
                 VStack(spacing: 16) {
                     // 站长名片
@@ -27,6 +27,40 @@ struct SettingsView: View {
                     .padding(.vertical, 22)
                     .background(RoundedRectangle(cornerRadius: 18).fill(YuBai.card))
                     .overlay(RoundedRectangle(cornerRadius: 18).stroke(YuBai.hairline, lineWidth: 1))
+
+                    // 主题色（动态同步自博客）
+                    VStack(spacing: 0) {
+                        HStack(spacing: 12) {
+                            Image(systemName: "paintpalette")
+                                .frame(width: 20)
+                                .foregroundStyle(theme.accent)
+                            Text("主题色").foregroundStyle(YuBai.ink)
+                            Spacer()
+                            Circle()
+                                .fill(theme.accent)
+                                .frame(width: 14, height: 14)
+                                .overlay(Circle().stroke(YuBai.hairline, lineWidth: 1))
+                            Text(theme.accentHex)
+                                .font(.system(.caption2, design: .monospaced))
+                                .foregroundStyle(YuBai.dim)
+                        }
+                        .font(.subheadline)
+                        .padding(.horizontal, 16).padding(.vertical, 12)
+
+                        Divider().overlay(YuBai.hairline).padding(.leading, 44)
+
+                        HStack(spacing: 6) {
+                            Image(systemName: theme.syncedFromBlog ? "checkmark.circle" : "clock")
+                                .font(.caption2)
+                            Text(theme.syncedFromBlog ? "已同步博客主题色，随博客设置自动变化" : "暂未取到博客主题色，正在使用内置玫瑰粉")
+                                .font(.caption2)
+                        }
+                        .foregroundStyle(YuBai.dim)
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                        .padding(.horizontal, 16).padding(.vertical, 10)
+                    }
+                    .background(RoundedRectangle(cornerRadius: 16).fill(YuBai.card))
+                    .overlay(RoundedRectangle(cornerRadius: 16).stroke(YuBai.hairline, lineWidth: 1))
 
                     // 站点信息
                     VStack(spacing: 0) {
@@ -52,23 +86,26 @@ struct SettingsView: View {
                     .background(RoundedRectangle(cornerRadius: 16).fill(YuBai.card))
                     .overlay(RoundedRectangle(cornerRadius: 16).stroke(YuBai.hairline, lineWidth: 1))
 
-                    Text("喵内阅读室 · v0.2.0")
+                    Text("喵内阅读室 · v0.4.0")
                         .font(.caption2).foregroundStyle(YuBai.dim)
                         .padding(.top, 6)
                 }
                 .padding(.horizontal, 16)
+                .padding(.top, 8)
                 .padding(.bottom, 40)
             }
             .scrollContentBackground(.hidden)
+            .background(PaperBackground())
+            .navigationTitle("设置")
         }
-        .tint(YuBai.accent)
+        .tint(theme.accent)
     }
 
     private func row(icon: String, label: String, value: String) -> some View {
         HStack(spacing: 12) {
             Image(systemName: icon)
                 .frame(width: 20)
-                .foregroundStyle(YuBai.accent)
+                .foregroundStyle(theme.accent)
             Text(label).foregroundStyle(YuBai.ink)
             Spacer()
             Text(value).foregroundStyle(YuBai.dim)
@@ -81,7 +118,7 @@ struct SettingsView: View {
         HStack(spacing: 12) {
             Image(systemName: icon)
                 .frame(width: 20)
-                .foregroundStyle(YuBai.accent)
+                .foregroundStyle(theme.accent)
             Text(label).foregroundStyle(YuBai.ink)
             Spacer()
             Image(systemName: "chevron.right").font(.caption2).foregroundStyle(YuBai.dim)

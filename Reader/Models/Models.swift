@@ -48,6 +48,25 @@ enum Plain {
           .replacingOccurrences(of: #"\[([^\]]*)\]\([^)]*\)"#, with: "$1", options: .regularExpression)
           .replacingOccurrences(of: #"[`#>]"#, with: "", options: .regularExpression)
     }
+
+    /// 朗读专用：比 text() 更干净——去代码块/表格/分割线/脚注/加粗斜体记号，
+    /// 并把连续空行压成一句一停顿的节奏
+    static func speech(from md: String) -> String {
+        var t = md
+        // 代码块、表格、front-matter 整段去掉
+        t = t.replacingOccurrences(of: #"(?s)```.*?```"#, with: "（代码）", options: .regularExpression)
+        t = t.replacingOccurrences(of: #"(?m)^\|.*\|\??$"#, with: "", options: .regularExpression)
+        t = t.replacingOccurrences(of: #"(?s)^---\n.*?---\n"#, with: "", options: .regularExpression)
+        // 图片、链接、脚注、HTML
+        t = t.replacingOccurrences(of: #"!\[[^\]]*\]\([^)]*\)"#, with: "", options: .regularExpression)
+        t = t.replacingOccurrences(of: #"\[([^\]]*)\]\([^)]*\)"#, with: "$1", options: .regularExpression)
+        t = t.replacingOccurrences(of: #"<[^>]+>"#, with: "", options: .regularExpression)
+        // 行内记号
+        t = t.replacingOccurrences(of: #"[*_~]{1,3}([^*_~]+)[*_~]{1,3}"#, with: "$1", options: .regularExpression)
+        t = t.replacingOccurrences(of: #"[`#>]"#, with: "", options: .regularExpression)
+        t = t.replacingOccurrences(of: #"^-{3,}\s*$"#, with: "", options: .regularExpression, range: nil)
+        return t
+    }
     /// markdown 首行图片剔除后的摘要
     static func excerpt(from md: String, limit: Int = 80) -> String {
         let t = text(from: md).replacingOccurrences(of: "\n", with: " ").trimmingCharacters(in: .whitespaces)
