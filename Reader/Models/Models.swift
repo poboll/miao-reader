@@ -70,6 +70,10 @@ enum Plain {
     /// markdown 首行图片剔除后的摘要
     static func excerpt(from md: String, limit: Int = 80) -> String {
         let t = text(from: md).replacingOccurrences(of: "\n", with: " ").trimmingCharacters(in: .whitespaces)
-        return t.count > limit ? String(t.prefix(limit)) + "…" : t
+        guard t.count > limit else { return t }
+        // 截断后吞掉句末标点再加省略号，避免「。 …」打架
+        let head = String(t.prefix(limit)).trimmingCharacters(in: .whitespaces)
+        let cleaned = head.replacingOccurrences(of: #"[。，；、,.!?！？…：\s]+$"#, with: "", options: .regularExpression)
+        return cleaned + "…"
     }
 }

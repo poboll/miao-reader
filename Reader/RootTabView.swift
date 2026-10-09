@@ -20,7 +20,7 @@ struct RootTabView: View {
                 .tag("settings")
         }
         .tint(theme.accent)
-        .toolbarBackground(.ultraThinMaterial, for: .tabBar)
+        .toolbarBackground(.thickMaterial, for: .tabBar)
         .onAppear {
             // 截图/验收专用：-mrTab notes 可直开某 tab（正常启动不受影响）
             if let t = UserDefaults.standard.string(forKey: "mrTab") { tab = t }

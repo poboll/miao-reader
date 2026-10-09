@@ -64,6 +64,14 @@ struct ThoughtListView: View {
                 }
                 .padding(.bottom, 110)
             }
+
+            .overlay(alignment: .bottom) {
+                LinearGradient(colors: [.clear, YuBai.paper.opacity(0.88), YuBai.paper],
+                               startPoint: .top, endPoint: .bottom)
+                    .frame(height: 140)
+                    .allowsHitTesting(false)
+                    .ignoresSafeArea(edges: .bottom)
+            }
             .scrollContentBackground(.hidden)
             .background(PaperBackground())
             .task { await load() }

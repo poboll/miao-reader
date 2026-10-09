@@ -59,6 +59,14 @@ struct NoteListView: View {
                 }
                 .padding(.bottom, 110)
             }
+
+            .overlay(alignment: .bottom) {
+                LinearGradient(colors: [.clear, YuBai.paper.opacity(0.88), YuBai.paper],
+                               startPoint: .top, endPoint: .bottom)
+                    .frame(height: 140)
+                    .allowsHitTesting(false)
+                    .ignoresSafeArea(edges: .bottom)
+            }
             .scrollContentBackground(.hidden)
             .background(PaperBackground())
             .navigationDestination(for: Note.self) { NoteDetailView(note: $0) }
@@ -150,7 +158,7 @@ struct NoteTimelineRow: View {
                 .foregroundStyle(YuBai.ink)
                 .lineLimit(1)
             if let t = note.text {
-                Text(Plain.excerpt(from: t, limit: 60))
+                Text(Plain.excerpt(from: t, limit: 46))
                     .font(.subheadline).foregroundStyle(YuBai.dim).lineLimit(2)
             }
         }
