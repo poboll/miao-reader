@@ -8,6 +8,7 @@ struct PostListView: View {
     @State private var failed = false
     @State private var autoPush = false
     @EnvironmentObject private var theme: ThemeStore
+    @State private var showSearch = false
 
     private var monthGroups: [(month: String, posts: [PostItem])] {
         var order: [String] = []
@@ -82,14 +83,23 @@ struct PostListView: View {
             }
             .scrollContentBackground(.hidden)
             .background(PaperBackground())
+            .navigationDestination(isPresented: $showSearch) { SearchView() }
+            .toolbar {
+                ToolbarItem(placement: .topBarTrailing) {
+                    Button { showSearch = true } label: {
+                        Image(systemName: "magnifyingglass")
+                    }
+                }
+            }
             .navigationDestination(for: PostItem.self) { PostDetailView(item: $0) }
             .navigationDestination(isPresented: $autoPush) {
                 if let first = posts.first { PostDetailView(item: first) }
             }
             .task {
                 await load()
-                // 截图/验收专用：-mrOpenFirst 1 自动进第一篇
+                // 截图/验收专用：-mrOpenFirst 1 自动进第一篇；-mrSearch 1 进搜索页
                 if UserDefaults.standard.object(forKey: "mrOpenFirst") != nil { autoPush = true }
+                if UserDefaults.standard.object(forKey: "mrSearch") != nil { showSearch = true }
             }
             .refreshable { await load() }
             .overlay {

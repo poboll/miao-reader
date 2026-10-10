@@ -6,6 +6,7 @@ struct NoteListView: View {
     @State private var loading = true
     @State private var failed = false
     @EnvironmentObject private var theme: ThemeStore
+    @State private var showSearch = false
 
     private var monthGroups: [(month: String, notes: [Note])] {
         var order: [String] = []
@@ -69,6 +70,14 @@ struct NoteListView: View {
             }
             .scrollContentBackground(.hidden)
             .background(PaperBackground())
+            .navigationDestination(isPresented: $showSearch) { SearchView() }
+            .toolbar {
+                ToolbarItem(placement: .topBarTrailing) {
+                    Button { showSearch = true } label: {
+                        Image(systemName: "magnifyingglass")
+                    }
+                }
+            }
             .navigationDestination(for: Note.self) { NoteDetailView(note: $0) }
             .task { await load() }
             .refreshable { await load() }

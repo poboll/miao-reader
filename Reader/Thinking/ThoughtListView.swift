@@ -7,6 +7,7 @@ struct ThoughtListView: View {
     @State private var loading = true
     @State private var failed = false
     @EnvironmentObject private var theme: ThemeStore
+    @State private var showSearch = false
 
     var body: some View {
         NavigationStack {
@@ -74,6 +75,14 @@ struct ThoughtListView: View {
             }
             .scrollContentBackground(.hidden)
             .background(PaperBackground())
+            .navigationDestination(isPresented: $showSearch) { SearchView() }
+            .toolbar {
+                ToolbarItem(placement: .topBarTrailing) {
+                    Button { showSearch = true } label: {
+                        Image(systemName: "magnifyingglass")
+                    }
+                }
+            }
             .task { await load() }
             .refreshable { await load() }
             .overlay {
